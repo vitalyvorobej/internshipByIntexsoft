@@ -81,11 +81,11 @@ INSERT INTO t_sale_rep(id_ware,month,inp_qty,inp_sum,supply_qty,supply_sum,sale_
 INSERT INTO t_sale_rep(id_ware,month,inp_qty,inp_sum,supply_qty,supply_sum,sale_sum,sales_sum,out_sum,out_sums) VALUES (4,'01.apr.2010',1200,260,2300,1500,500,450,980,2290);
 INSERT INTO t_sale_rep(id_ware,month,inp_qty,inp_sum,supply_qty,supply_sum,sale_sum,sales_sum,out_sum,out_sums) VALUES (5,'01.may.2010',1100,250,2400,1400,400,350,1080,1290);
 
-INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (1,'01.jan.2000','01.jan.2001',1800);
-INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (2,'01.feb.2000','01.feb.2001',1900);
-INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (3,'01.mar.2000','01.mar.2001',2000);
-INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (4,'01.apr.2000','01.apr.2001',1500);
-INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (5,'01.may.2000','01.may.2001',1700);
+INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (1,'01.jan.2000','01.jan.2001',1100);
+INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (2,'01.feb.2000','01.feb.2001',1200);
+INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (3,'01.mar.2000','01.mar.2001',1300);
+INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (4,'01.apr.2000','01.apr.2001',1400);
+INSERT INTO t_price_ware(id_ware,dt_beg,dt_end,price) VALUES (5,'01.may.2000','01.may.2001',1500);
 
 INSERT INTO t_dept(id_dept,name,id_parent) VALUES (1,'first_dept',null);
 INSERT INTO t_dept(id_dept,name,id_parent) VALUES (2,'second_dept',1);
@@ -105,11 +105,11 @@ INSERT INTO t_sale(id_sale,num,dt,id_client,e_state,discount,summa,nds) VALUES (
 INSERT INTO t_sale(id_sale,num,dt,id_client,e_state,discount,summa,nds) VALUES (4,'1s4','12.jan.2002',1,12,10.6,15015,12);
 INSERT INTO t_sale(id_sale,num,dt,id_client,e_state,discount,summa,nds) VALUES (5,'1s5','12.jan.2001',1,12,10.8,15022,11);
 
-INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (1,1,1,1,1,820.30,7.2,1500.2,10);
-INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (2,2,2,2,2,820.38,7.3,1500.2,10);
-INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (3,3,3,3,3,820.94,7.4,1500.2,10);
-INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (4,4,4,4,4,820.16,7.5,1500.2,10);
-INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (5,5,5,5,5,820.25,7.6,1500.2,10);
+INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,discount,disc_price,summa,nds) VALUES (1,1,1,1,1,1000,30,700,1500.2,10);
+INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,discount,disc_price,summa,nds) VALUES (2,2,2,2,2,1100,25,825,1000,10);
+INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,discount,disc_price,summa,nds) VALUES (3,3,3,3,3,1200,20,960,1000,10);
+INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,discount,disc_price,summa,nds) VALUES (4,4,4,4,4,1300,15,1105,1000,10);
+INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,discount,disc_price,summa,nds) VALUES (5,5,5,5,5,1400,10,1350,1000,10);
 
 COMMIT;
 

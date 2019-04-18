@@ -196,7 +196,8 @@ num INTEGER,
 id_ware NUMBER,
 qty INTEGER,
 price NUMBER(8,2),
-disc_price NUMBER (8,6),
+discount NUMBER(8,2),
+disc_price NUMBER (8,2),
 summa NUMBER (14,2),
 nds NUMBER(14,2)
 );
