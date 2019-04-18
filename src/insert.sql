@@ -1,3 +1,6 @@
+/* script for filling the database with data*/
+
+
 DELETE FROM t_supply_str;
 DELETE FROM t_supply;
 DELETE FROM t_supplier;
@@ -27,11 +30,24 @@ INSERT INTO t_supply(id_supply,code,num,dt,id_supplier,e_state,summa,nds) VALUES
 INSERT INTO t_supply(id_supply,code,num,dt,id_supplier,e_state,summa,nds) VALUES (4,'230012','+37512909','11.jun.11',4,11,13200,15);
 INSERT INTO t_supply(id_supply,code,num,dt,id_supplier,e_state,summa,nds) VALUES (5,'23015','+37512912','13.feb.12',5,10,88900,15);
 
-INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (1,'1','pop',1,25,28,9400);
-INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (2,'2','star',2,27,26,9200);
-INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (3,'3','def',3,24,23,9300);
-INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (4,'4','rebr',4,30,32,9500);
-INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (5,'5','kien',5,22,33,9700);
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (1,6,'14800','12d8',1);
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (2,7,'76','11d9',2);
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (3,8,'134','10s4',3);
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (4,9,'152','3f8',4);
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (5,10,'109','12sfd8',5);
+
+INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (1,1,'sode',1,'first_group','under_first_group','Coca',1100);
+INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (2,2,'water',2,'second_group','under_sec_group','Pepsi',1200);
+INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (3,3,'wisky',3,'third_group','under_third_group','Kim',1300);
+INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (4,4,'rom',4,'fourth_group','under_fourth_group','Jackdn',1400);
+INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (5,5,'beer',5,'fifth_group','under_fifth_group','Syris',1500);
+
+
+INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (1,'1','pop',1,25,28,1000);
+INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (2,'2','star',2,27,26,1100);
+INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (3,'3','def',3,24,23,1200);
+INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (4,'4','rebr',4,30,32,1300);
+INSERT INTO t_ware(id_ware,moniker,name,id_model,sz_orig,sz_rus,price) VALUES (5,'5','kien',5,22,33,1400);
 
 
 
@@ -41,23 +57,11 @@ INSERT INTO t_supply_str(id_supply_str,id_supply,num,id_ware,qty,price,summa,nds
 INSERT INTO t_supply_str(id_supply_str,id_supply,num,id_ware,qty,price,summa,nds) VALUES (4,4,5,4,6,22400,8600,3);
 INSERT INTO t_supply_str(id_supply_str,id_supply,num,id_ware,qty,price,summa,nds) VALUES (5,5,6,5,5,17500,4576,8);
 
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (1,6,'14800','12d8',1);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (2,7,'76','11d9',2);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (3,8,'134','10s4',3);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (4,9,'152','3f8',4);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (5,10,'109','12sfd8',5);
-
-INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (1,1,'sode',1,'first_group','under_first_group','Coca',13900);
-INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (2,2,'water',2,'second_group','under_sec_group','Pepsi',13900);
-INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (3,3,'wisky',3,'third_group','under_third_group','Kim',13900);
-INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (4,4,'rom',4,'fourth_group','under_fourth_group','Jackdn',13900);
-INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (5,5,'beer',5,'fifth_group','under_fifth_group','Syris',13900);
-
-INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (1,'02.jan.12','02.jan.13',9600);
-INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (2,'24.feb.10','24.feb.15',8300);
-INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (3,'22.may.09','22.may.10',2500);
-INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (4,'13.dec.1997','12.feb.2008',6600);
-INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (5,'13.jan.1998','13.jan.2000',7800);
+INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (1,'02.jan.12','02.jan.13',1000);
+INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (2,'24.feb.10','24.feb.15',1100);
+INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (3,'22.may.09','22.may.10',1200);
+INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (4,'13.dec.1997','12.feb.2008',1300);
+INSERT INTO t_price_model(id_model,dt_beg,dt_end,price) VALUES (5,'13.jan.1998','13.jan.2000',1400);
 
 INSERT INTO t_rest(id_ware, qty) VALUES (1,3);
 INSERT INTO t_rest(id_ware, qty) VALUES (2,5);
@@ -106,6 +110,8 @@ INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summ
 INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (3,3,3,3,3,820.94,7.4,1500.2,10);
 INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (4,4,4,4,4,820.16,7.5,1500.2,10);
 INSERT INTO t_sale_str(id_sale_str,id_sale,num,id_ware,qty,price,disc_price,summa,nds) VALUES (5,5,5,5,5,820.25,7.6,1500.2,10);
+
+COMMIT;
 
 select * from t_supplier;
 select * from t_supply;    
