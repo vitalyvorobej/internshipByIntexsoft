@@ -27,5 +27,5 @@ COMMIT;
  SELECT lpad(' ', 5*level) || NAME AS Tree FROM t_ctl_node START WITH id_parent IS NULL CONNECT BY PRIOR id_ctl_node = id_parent ORDER SIBLINGS BY NAME;
  
 /*uncomment if you want to see the output as a string like a cmd path*/
---select SYS_CONNECT_BY_PATH(name,'/') as Path from t_ctl_node where id_ctl_node=3 STart WITH id_parent is null CONNECT BY PRIOR id_ctl_node = id_parent;
+--SELECT SYS_CONNECT_BY_PATH(name,'/') as Path FROM t_ctl_node WHERE id_ctl_node=3 START WITH id_parent IS NULL CONNECT BY PRIOR id_ctl_node = id_parent;
 
