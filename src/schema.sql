@@ -44,10 +44,11 @@ id_ctl_node NUMBER PRIMARY KEY,
 id_parent NUMBER, 
 code NVARCHAR2(12),
 tree_code NVARCHAR2(240),
-name NUMBER
+name NVARCHAR2(30)
  );
- 
---ALTER TABLE "t_ctl_node" ADD CONSTRAINT "t_ctl_node_fk" FOREIGN KEY ("name") REFERENCES "t_ctl_node"("id_parent"); 
+ ALTER TABLE t_ctl_node ADD CONSTRAINT fk_t_ctl_node FOREIGN KEY (id_parent) REFERENCES t_ctl_node(id_ctl_node);
+--ALTER TABLE t_ctl_node ADD CONSTRAINT fk_t_ctl_node FOREIGN KEY (id_parent) REFERENCES t_ctl_node(id_ctl_node); 
+--ALTER TABLE t_ctl_node ADD CONSTRAINT t_ctl_node_fk FOREIGN KEY (name) REFERENCES t_ctl_node(id_parent); 
 
 
  CREATE TABLE t_model

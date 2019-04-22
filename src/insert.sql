@@ -30,11 +30,11 @@ INSERT INTO t_supply(id_supply,code,num,dt,id_supplier,e_state,summa,nds) VALUES
 INSERT INTO t_supply(id_supply,code,num,dt,id_supplier,e_state,summa,nds) VALUES (4,'230012','+37512909','11.jun.11',4,11,13200,15);
 INSERT INTO t_supply(id_supply,code,num,dt,id_supplier,e_state,summa,nds) VALUES (5,'23015','+37512912','13.feb.12',5,10,88900,15);
 
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (1,6,'14800','12d8',1);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (2,7,'76','11d9',2);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (3,8,'134','10s4',3);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (4,9,'152','3f8',4);
-INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (5,10,'109','12sfd8',5);
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (1,null,'14800','12d8','first_name');
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (2,null,'76','11d9','second_name');
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (3,null,'134','10s4','third_name');
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (4,null,'152','3f8','fourth_name');
+INSERT INTO t_ctl_node(id_ctl_node,id_parent,code,tree_code,name) VALUES (5,null,'109','12sfd8','fifth_name');
 
 INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (1,1,'sode',1,'first_group','under_first_group','Coca',1100);
 INSERT INTO t_model(id_model,moniker,name,id_node,grp,subgrp,label,price) VALUES (2,2,'water',2,'second_group','under_sec_group','Pepsi',1200);
