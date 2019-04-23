@@ -23,8 +23,18 @@ UPDATE t_ctl_node set id_parent = 4 where id_ctl_node = 5;
 
 COMMIT;
 
-/*Tree output*/
- SELECT lpad(' ', 5*level) || NAME AS Tree FROM t_ctl_node START WITH id_parent IS NULL CONNECT BY PRIOR id_ctl_node = id_parent ORDER SIBLINGS BY NAME;
+WITH childs_t AS 
+( 
+SELECT id_ctl_node,id_parent,name,COUNT(*)-1 childs
+FROM t_ctl_node
+CONNECT BY PRIOR id_parent = id_ctl_node 
+GROUP BY id_ctl_node,id_parent,name
+)
+SELECT id_ctl_node,name, childs, lpad(' ', 5*level) || name as Tree
+FROM childs_t 
+CONNECT BY PRIOR id_ctl_node = id_parent
+START WITH id_parent IS NULL 
+ORDER SIBLINGS by id_ctl_node;
  
 /*uncomment if you want to see the output as a string like a cmd path*/
 --SELECT SYS_CONNECT_BY_PATH(name,'/') as Path FROM t_ctl_node WHERE id_ctl_node=3 START WITH id_parent IS NULL CONNECT BY PRIOR id_ctl_node = id_parent;
